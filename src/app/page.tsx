@@ -6,7 +6,7 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-full mx-auto">
         <div className="mb-6">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
             Lark Wiki 文件浏览器

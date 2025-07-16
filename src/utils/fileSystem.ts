@@ -28,13 +28,14 @@ export async function readDirectory(dirPath: string = ROOT_PATH): Promise<FileIt
 
       if (item.isFile()) {
         fileItem.mimeType = getMimeType(item.name);
-        // 只读取小文件的内容用于预览
-        if (stats.size < 100 * 1024) { // 小于100KB
+        
+        // 只读取文本文件的内容用于预览
+        if (stats.size < 1024 * 1024 && isTextFile(item.name)) { // 小于1MB的文本文件
           try {
             const content = await fs.promises.readFile(fullPath, 'utf-8');
             fileItem.content = content;
           } catch (error) {
-            // 如果不是文本文件，跳过内容读取
+            // 如果读取失败，跳过内容读取
             fileItem.content = undefined;
           }
         }
@@ -96,4 +97,16 @@ function getMimeType(filename: string): string {
   };
   
   return mimeTypes[ext] || 'application/octet-stream';
+}function
+ isTextFile(filename: string): boolean {
+  const ext = path.extname(filename).toLowerCase();
+  const textExtensions = [
+    '.txt', '.md', '.json', '.js', '.ts', '.jsx', '.tsx',
+    '.html', '.css', '.xml', '.yml', '.yaml', '.csv', '.log',
+    '.sql', '.py', '.java', '.cpp', '.c', '.h', '.php',
+    '.rb', '.go', '.rs', '.sh', '.bat', '.ps1', '.ini',
+    '.conf', '.config', '.env', '.gitignore', '.dockerfile'
+  ];
+  
+  return textExtensions.includes(ext);
 }
