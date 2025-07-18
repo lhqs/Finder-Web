@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# 优化爬虫抓取
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# 禁止访问API路径和私有文件
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /.git/
+
+# 站点地图位置
+Sitemap: https://your-domain.com/sitemap.xml

@@ -1,6 +1,14 @@
-# 专业文件浏览器
+# 专业文件浏览器 - 现代化在线文件管理工具
 
-一个基于 Next.js 构建的现代化文件浏览器，采用类似 macOS Finder 的分栏视图设计，支持多种文件格式的预览功能。
+[![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-blue)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-38B2AC)](https://tailwindcss.com/)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
+一个基于 Next.js 构建的现代化文件浏览器，采用类似 macOS Finder 的分栏视图设计，支持20+种文件格式的在线预览功能。为开发者和用户提供高效、直观的文件管理体验。
+
+🌟 **[在线演示](https://your-domain.com)** | 📖 **[完整文档](https://your-domain.com/docs)** | 🚀 **[功能特性](https://your-domain.com/features)**
 
 ## ✨ 功能特性
 
