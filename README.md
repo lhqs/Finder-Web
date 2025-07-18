@@ -45,11 +45,25 @@
 pnpm install
 ```
 
-### 配置文件路径
-在 `src/utils/fileSystem.ts` 和 `src/app/api/file/route.ts` 中修改 `ROOT_PATH` 为你想要浏览的目录：
+### 配置文件浏览模式
+复制 `.env.example` 为 `.env.local` 并根据需要配置：
 
-```typescript
-const ROOT_PATH = '/your/target/directory';
+```bash
+cp .env.example .env.local
+```
+
+编辑 `.env.local` 文件：
+
+```bash
+# 选择浏览模式
+FILE_BROWSER_MODE=local  # 或 files
+
+# 本地文件系统模式配置
+ROOT_PATH=/Users/your-username/Documents
+
+# 项目文件夹模式配置（浏览项目中的 files 文件夹）
+FILES_MODE_ENABLED=true
+FILES_FOLDER_PATH=files
 ```
 
 ### 启动开发服务器
@@ -69,6 +83,8 @@ pnpm start
 
 ```
 finder-web/
+├── config/
+│   └── app.config.ts          # 应用配置文件 🆕
 ├── src/
 │   ├── app/                    # Next.js App Router
 │   │   ├── api/file/          # 文件服务 API
@@ -81,6 +97,8 @@ finder-web/
 │   │   └── file.ts           # 文件相关类型
 │   └── utils/                 # 工具函数
 │       └── fileSystem.ts      # 文件系统操作
+├── .env.example              # 环境变量配置示例 🆕
+├── .env.local                # 环境变量配置文件 🆕
 ├── public/                    # 静态资源
 ├── package.json              # 项目配置
 └── README.md                 # 项目文档
@@ -132,18 +150,54 @@ finder-web/
 
 ## ⚙️ 配置说明
 
-### 修改根目录
-编辑以下文件中的 `ROOT_PATH` 常量：
+### 浏览模式配置
 
-1. `src/utils/fileSystem.ts` - 文件系统读取
-2. `src/app/api/file/route.ts` - 文件服务 API
+#### 本地文件系统模式 (local)
+浏览本地文件系统中的任意目录：
+
+```bash
+# .env.local
+FILE_BROWSER_MODE=local
+ROOT_PATH=/Users/your-username/Documents
+```
+
+#### 项目文件夹模式 (files)
+浏览项目中的 `files` 文件夹，适合存放和管理项目相关的文档、资源等文件：
+
+```bash
+# .env.local
+FILE_BROWSER_MODE=files
+FILES_MODE_ENABLED=true
+FILES_FOLDER_PATH=files
+```
+
+在这种模式下：
+- 只浏览项目根目录下的 `files` 文件夹
+- 显示所有文件类型，包括隐藏文件
+- 适合存放项目文档、设计稿、测试文件等
+
+### 高级配置
+所有配置项都在 `config/app.config.ts` 中定义，你可以根据需要修改：
 
 ```typescript
-const ROOT_PATH = '/Users/your-username/your-directory';
+// 项目文件夹配置
+filesFolder: {
+  enabled: true,
+  folderPath: 'files', // 可以改为其他文件夹名称，如 'documents', 'assets' 等
+},
+
+// 性能配置
+preview: {
+  maxTextFileSize: 1024 * 1024, // 1MB
+  csvRowLimit: {
+    normal: 10,
+    expanded: 50
+  }
+}
 ```
 
 ### 性能配置
-- 文本文件大小限制: 1MB（可在 `fileSystem.ts` 中修改）
+- 文本文件大小限制: 1MB（可在配置文件中修改）
 - CSV 显示行数: 普通模式 10 行，展开模式 50 行
 - 代码高亮最大高度: 普通模式 384px，展开模式无限制
 

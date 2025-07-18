@@ -23,7 +23,7 @@ const Navigation = () => {
               aria-label="专业文件浏览器首页"
             >
               <span className="text-lg md:text-xl font-bold text-gray-900">
-              Mac Finder 风格文件浏览器
+              专业文件浏览器
               </span>
             </Link>
           </div>

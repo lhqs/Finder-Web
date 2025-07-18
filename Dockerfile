@@ -42,9 +42,15 @@ COPY --from=builder /app/public ./public
 RUN mkdir .next
 RUN chown nextjs:nodejs .next
 
+# 复制配置文件
+COPY --from=builder --chown=nextjs:nodejs /app/config ./config
+
 # 复制构建产物
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+# 创建 files 目录用于项目文件夹模式
+RUN mkdir -p files && chown nextjs:nodejs files
 
 USER nextjs
 
@@ -52,5 +58,9 @@ EXPOSE 3000
 
 ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
+# 默认使用项目文件夹模式
+ENV FILE_BROWSER_MODE=files
+ENV FILES_MODE_ENABLED=true
+ENV FILES_FOLDER_PATH=files
 
 CMD ["node", "server.js"]

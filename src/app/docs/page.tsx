@@ -78,23 +78,50 @@ pnpm install
 npm install`}</code>
             </pre>
 
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">3. 配置文件路径</h3>
-            <p>在以下文件中修改 <code>ROOT_PATH</code> 为你想要浏览的目录：</p>
-            <ul className="mb-4">
-              <li><code>src/utils/fileSystem.ts</code></li>
-              <li><code>src/app/api/file/route.ts</code></li>
-            </ul>
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">3. 配置浏览模式</h3>
+            <p>复制环境变量配置文件并根据需要修改：</p>
             <pre className="bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto text-black">
-              <code>const ROOT_PATH = '/your/target/directory';</code>
+              <code>cp .env.example .env.local</code>
+            </pre>
+            <p>编辑 <code>.env.local</code> 文件选择浏览模式：</p>
+            <pre className="bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto text-black">
+              <code>{`# 本地文件系统模式
+FILE_BROWSER_MODE=local
+ROOT_PATH=/Users/your-username/Documents
+
+# 或项目文件夹模式
+FILE_BROWSER_MODE=files
+FILES_MODE_ENABLED=true
+FILES_FOLDER_PATH=files`}</code>
             </pre>
           </section>
 
           <section id="configuration" className="bg-white p-8 rounded-lg shadow-sm mb-8">
             <h2 className="text-2xl font-semibold text-gray-900 mb-6">⚙️ 配置说明</h2>
             
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">浏览模式配置</h3>
+            <div className="mb-6">
+              <h4 className="font-semibold text-gray-900 mb-2">本地文件系统模式 (local)</h4>
+              <p className="text-gray-600 mb-2">浏览本地文件系统中的任意目录：</p>
+              <pre className="bg-gray-100 p-3 rounded text-sm text-black mb-4">
+                <code>{`FILE_BROWSER_MODE=local
+ROOT_PATH=/Users/your-username/Documents`}</code>
+              </pre>
+            </div>
+            
+            <div className="mb-6">
+              <h4 className="font-semibold text-gray-900 mb-2">项目文件夹模式 (files)</h4>
+              <p className="text-gray-600 mb-2">浏览项目中的 files 文件夹，适合存放项目相关文档：</p>
+              <pre className="bg-gray-100 p-3 rounded text-sm text-black mb-4">
+                <code>{`FILE_BROWSER_MODE=files
+FILES_MODE_ENABLED=true
+FILES_FOLDER_PATH=files`}</code>
+              </pre>
+            </div>
+
             <h3 className="text-lg font-semibold text-gray-900 mb-3">性能配置</h3>
             <ul className="mb-4">
-              <li><strong>文本文件大小限制</strong>: 1MB（可在 fileSystem.ts 中修改）</li>
+              <li><strong>文本文件大小限制</strong>: 1MB（可在 config/app.config.ts 中修改）</li>
               <li><strong>CSV 显示行数</strong>: 普通模式 10 行，展开模式 50 行</li>
               <li><strong>代码高亮最大高度</strong>: 普通模式 384px，展开模式无限制</li>
             </ul>
@@ -124,9 +151,22 @@ pnpm start`}</code>
               <code>{`# 构建 Docker 镜像
 docker build -t finder-web .
 
-# 运行容器
-docker run -p 3000:3000 -v /your/files:/app/files finder-web`}</code>
+# 运行容器 - 项目文件夹模式（推荐）
+docker run -p 3000:3000 -v /your/local/files:/app/files finder-web
+
+# 运行容器 - 本地文件系统模式
+docker run -p 3000:3000 \\
+  -v /your/local/directory:/app/mounted \\
+  -e FILE_BROWSER_MODE=local \\
+  -e ROOT_PATH=/app/mounted \\
+  finder-web`}</code>
             </pre>
+            <div className="bg-blue-50 p-4 rounded-lg mb-4">
+              <p className="text-blue-800 text-sm">
+                <strong>提示：</strong> Docker 容器默认使用项目文件夹模式，将你的文件挂载到 <code>/app/files</code> 目录即可。
+                如需使用本地文件系统模式，需要通过环境变量进行配置。
+              </p>
+            </div>
 
             <h3 className="text-lg font-semibold text-gray-900 mb-3">Vercel 部署</h3>
             <p>项目已配置好 Vercel 部署，只需连接 GitHub 仓库即可自动部署。</p>

@@ -1,8 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import config from '../../../../config/app.config';
 
-const ROOT_PATH = '/Users/lhqs/jijifeng';
+// 获取根路径配置
+const getRootPath = (): string => {
+  if (config.mode === 'files') {
+    return path.resolve(process.cwd(), config.filesFolder.folderPath);
+  }
+  return config.rootPath;
+};
+
+const ROOT_PATH = getRootPath();
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;

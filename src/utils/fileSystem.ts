@@ -1,8 +1,17 @@
 import fs from 'fs';
 import path from 'path';
 import { FileItem } from '@/types/file';
+import config from '../../config/app.config';
 
-const ROOT_PATH = '/Users/lhqs/jijifeng';
+// 获取根路径配置
+const getRootPath = (): string => {
+  if (config.mode === 'files') {
+    return path.resolve(process.cwd(), config.filesFolder.folderPath);
+  }
+  return config.rootPath;
+};
+
+const ROOT_PATH = getRootPath();
 
 export async function readDirectory(dirPath: string = ROOT_PATH): Promise<FileItem[]> {
   try {
@@ -10,8 +19,10 @@ export async function readDirectory(dirPath: string = ROOT_PATH): Promise<FileIt
     const fileItems: FileItem[] = [];
 
     for (const item of items) {
-      // 跳过隐藏文件和系统文件
-      if (item.name.startsWith('.')) continue;
+      // files 模式下显示所有文件，local 模式下跳过隐藏文件
+      if (config.mode === 'local' && item.name.startsWith('.')) {
+        continue;
+      }
 
       const fullPath = path.join(dirPath, item.name);
       const relativePath = path.relative(ROOT_PATH, fullPath);
@@ -153,3 +164,4 @@ function isTextFile(filename: string): boolean {
   
   return textExtensions.includes(ext);
 }
+
