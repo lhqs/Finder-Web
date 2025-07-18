@@ -13,6 +13,7 @@ import { MarkdownPreview } from './MarkdownPreview';
 import { CodePreview } from './CodePreview';
 import { CSVPreview } from './CSVPreview';
 import { TextPreview } from './TextPreview';
+import { OfficePreview } from './OfficePreview';
 import { formatFileSize } from '@/utils/formatters';
 
 interface FilePreviewProps {
@@ -77,6 +78,17 @@ export function FilePreview({ file, isExpanded }: FilePreviewProps) {
         </div>
       </div>
     );
+  }
+
+  // Office 文档预览 (Word, Excel, PowerPoint)
+  if (mimeType.includes('application/msword') || 
+      mimeType.includes('application/vnd.openxmlformats-officedocument.wordprocessingml') ||
+      mimeType.includes('application/vnd.ms-excel') || 
+      mimeType.includes('application/vnd.openxmlformats-officedocument.spreadsheetml') ||
+      mimeType.includes('application/vnd.ms-powerpoint') || 
+      mimeType.includes('application/vnd.openxmlformats-officedocument.presentationml') ||
+      ['doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx'].includes(fileExt)) {
+    return <OfficePreview file={file} isExpanded={isExpanded} />;
   }
 
   // 视频预览

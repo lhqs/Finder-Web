@@ -10,7 +10,9 @@ import {
   FilmIcon,
   MusicalNoteIcon,
   CodeBracketIcon,
-  DocumentTextIcon
+  DocumentTextIcon,
+  TableCellsIcon,
+  PresentationChartLineIcon
 } from '@heroicons/react/24/outline';
 import { FilePreview } from './FilePreview';
 import { getFileIconType, getFileTypeDisplay } from '@/utils/fileHelpers';
@@ -45,6 +47,12 @@ export function FilePreviewPanel({
         return <CodeBracketIcon className="w-4 h-4 text-orange-500" />;
       case 'markdown':
         return <DocumentTextIcon className="w-4 h-4 text-blue-600" />;
+      case 'word':
+        return <DocumentTextIcon className="w-4 h-4 text-blue-700" />;
+      case 'excel':
+        return <TableCellsIcon className="w-4 h-4 text-green-600" />;
+      case 'powerpoint':
+        return <PresentationChartLineIcon className="w-4 h-4 text-orange-600" />;
       default:
         return <DocumentIcon className="w-4 h-4 text-gray-500" />;
     }
