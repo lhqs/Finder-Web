@@ -7,6 +7,7 @@ const ROOT_PATH = '/Users/lhqs/jijifeng';
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const filePath = searchParams.get('path');
+  const isDownload = searchParams.get('download') === 'true';
 
   if (!filePath) {
     return NextResponse.json({ error: 'Path parameter is required' }, { status: 400 });
@@ -89,12 +90,20 @@ export async function GET(request: NextRequest) {
     
     contentType = mimeTypes[ext] || contentType;
 
+    const headers: Record<string, string> = {
+      'Content-Type': contentType,
+      'Content-Length': stats.size.toString(),
+      'Cache-Control': 'public, max-age=3600',
+    };
+
+    // 如果是下载请求，添加下载头部
+    if (isDownload) {
+      const fileName = path.basename(resolvedPath);
+      headers['Content-Disposition'] = `attachment; filename="${encodeURIComponent(fileName)}"`;
+    }
+
     return new NextResponse(fileBuffer, {
-      headers: {
-        'Content-Type': contentType,
-        'Content-Length': stats.size.toString(),
-        'Cache-Control': 'public, max-age=3600',
-      },
+      headers,
     });
 
   } catch (error) {

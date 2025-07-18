@@ -1,13 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { FileItem, Column } from '@/types/file';
 import { 
   ChevronRightIcon, 
   FolderIcon, 
   DocumentIcon,
   ArrowsPointingOutIcon,
-  XMarkIcon,
+  ArrowsPointingInIcon,
+  ArrowDownTrayIcon,
   EyeIcon,
   DocumentTextIcon,
   PhotoIcon,
@@ -32,6 +33,7 @@ export default function ColumnView({ data }: ColumnViewProps) {
     }
   ]);
   const [isPreviewExpanded, setIsPreviewExpanded] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const handleItemClick = (columnId: string, item: FileItem) => {
     const columnIndex = columns.findIndex(col => col.id === columnId);
@@ -59,6 +61,15 @@ export default function ColumnView({ data }: ColumnViewProps) {
     }
 
     setColumns(updatedColumns);
+    
+    // 如果是文件夹，自动滚动到最右侧
+    if (item.type === 'folder' && item.children) {
+      setTimeout(() => {
+        if (scrollContainerRef.current) {
+          scrollContainerRef.current.scrollLeft = scrollContainerRef.current.scrollWidth;
+        }
+      }, 50);
+    }
   };
 
   const getFileIcon = (item: FileItem) => {
@@ -100,10 +111,23 @@ export default function ColumnView({ data }: ColumnViewProps) {
 
   const selectedFile = getSelectedFile();
 
+  const handleDownload = (file: FileItem) => {
+    const downloadUrl = `/api/file?path=${encodeURIComponent(file.path)}&download=true`;
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = file.name;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="flex h-full bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
       {/* Columns Container */}
-      <div className={`${isPreviewExpanded ? 'w-1/4' : 'w-2/3'} transition-all duration-300 overflow-x-auto border-r border-gray-200`}>
+      <div 
+        ref={scrollContainerRef}
+        className={`${isPreviewExpanded ? 'w-1/4' : 'w-2/3'} transition-all duration-300 overflow-x-auto border-r border-gray-200`}
+      >
         <div className="flex min-w-max h-full">
           {columns.map((column, index) => (
             <div
@@ -164,11 +188,22 @@ export default function ColumnView({ data }: ColumnViewProps) {
                 </div>
                 <div className="flex items-center space-x-2 ml-4">
                   <button
+                    onClick={() => handleDownload(selectedFile)}
+                    className="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                    title="下载文件"
+                  >
+                    <ArrowDownTrayIcon className="w-5 h-5" />
+                  </button>
+                  <button
                     onClick={() => setIsPreviewExpanded(!isPreviewExpanded)}
                     className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
                     title={isPreviewExpanded ? "收起预览" : "展开预览"}
                   >
-                    <ArrowsPointingOutIcon className="w-5 h-5" />
+                    {isPreviewExpanded ? (
+                      <ArrowsPointingInIcon className="w-5 h-5" />
+                    ) : (
+                      <ArrowsPointingOutIcon className="w-5 h-5" />
+                    )}
                   </button>
                 </div>
               </div>
