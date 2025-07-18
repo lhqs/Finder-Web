@@ -210,7 +210,7 @@ export default function ColumnView({ data }: ColumnViewProps) {
             </div>
             
             {/* Preview Content */}
-            <div className="flex-1 overflow-y-auto p-4">
+            <div className="flex-1 overflow-y-auto p-2">
               <FilePreview file={selectedFile} isExpanded={isPreviewExpanded} />
             </div>
           </div>
@@ -238,7 +238,7 @@ function FilePreview({ file, isExpanded }: { file: FileItem; isExpanded: boolean
     const imagePath = `/api/file?path=${encodeURIComponent(file.path)}`;
     return (
       <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-        <div className="p-4 bg-gray-50 border-b border-gray-200">
+        <div className="p-2 bg-gray-50 border-b border-gray-200">
           <h4 className="font-medium text-gray-900 flex items-center">
             <PhotoIcon className="w-4 h-4 mr-2 text-green-500" />
             图片预览
@@ -248,7 +248,7 @@ function FilePreview({ file, isExpanded }: { file: FileItem; isExpanded: boolean
           <img
             src={imagePath}
             alt={file.name}
-            className={`max-w-full h-auto rounded-lg shadow-sm ${isExpanded ? 'max-h-none' : 'max-h-96'}`}
+            className={`max-w-full h-full rounded-lg shadow-sm ${isExpanded ? 'max-h-none' : 'max-h-96'}`}
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               target.style.display = 'none';
@@ -270,7 +270,7 @@ function FilePreview({ file, isExpanded }: { file: FileItem; isExpanded: boolean
     const pdfPath = `/api/file?path=${encodeURIComponent(file.path)}`;
     return (
       <div className="bg-white rounded-lg border border-gray-200 overflow-hidden h-full">
-        <div className="p-4 bg-gray-50 border-b border-gray-200">
+        <div className="p-2 bg-gray-50 border-b border-gray-200">
           <h4 className="font-medium text-gray-900 flex items-center">
             <DocumentIcon className="w-4 h-4 mr-2 text-red-500" />
             PDF 文档
@@ -292,7 +292,7 @@ function FilePreview({ file, isExpanded }: { file: FileItem; isExpanded: boolean
     const videoPath = `/api/file?path=${encodeURIComponent(file.path)}`;
     return (
       <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-        <div className="p-4 bg-gray-50 border-b border-gray-200">
+        <div className="p-2 bg-gray-50 border-b border-gray-200">
           <h4 className="font-medium text-gray-900 flex items-center">
             <FilmIcon className="w-4 h-4 mr-2 text-purple-500" />
             视频播放
@@ -320,7 +320,7 @@ function FilePreview({ file, isExpanded }: { file: FileItem; isExpanded: boolean
     const audioPath = `/api/file?path=${encodeURIComponent(file.path)}`;
     return (
       <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-        <div className="p-4 bg-gray-50 border-b border-gray-200">
+        <div className="p-2 bg-gray-50 border-b border-gray-200">
           <h4 className="font-medium text-gray-900 flex items-center">
             <MusicalNoteIcon className="w-4 h-4 mr-2 text-pink-500" />
             音频播放
@@ -437,7 +437,7 @@ function FilePreview({ file, isExpanded }: { file: FileItem; isExpanded: boolean
 function MarkdownPreview({ content, isExpanded }: { content: string; isExpanded: boolean }) {
   return (
     <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-      <div className="p-4 bg-gray-50 border-b border-gray-200">
+      <div className="p-2 bg-gray-50 border-b border-gray-200">
         <h4 className="font-medium text-gray-900 flex items-center">
           <DocumentTextIcon className="w-4 h-4 mr-2 text-blue-600" />
           Markdown 文档
@@ -461,7 +461,7 @@ function CodePreview({ content, language, title, isExpanded }: {
 }) {
   return (
     <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-      <div className="p-4 bg-gray-50 border-b border-gray-200">
+      <div className="p-2 bg-gray-50 border-b border-gray-200">
         <h4 className="font-medium text-gray-900 flex items-center">
           <CodeBracketIcon className="w-4 h-4 mr-2 text-orange-500" />
           {title}
@@ -499,7 +499,7 @@ function CSVPreview({ content, isExpanded }: { content: string; isExpanded: bool
   
   return (
     <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-      <div className="p-4 bg-gray-50 border-b border-gray-200">
+      <div className="p-2 bg-gray-50 border-b border-gray-200">
         <h4 className="font-medium text-gray-900 flex items-center">
           <DocumentIcon className="w-4 h-4 mr-2 text-green-600" />
           CSV 数据表格
@@ -546,7 +546,7 @@ function TextPreview({ content, title, isExpanded }: {
 }) {
   return (
     <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
-      <div className="p-4 bg-gray-50 border-b border-gray-200">
+      <div className="p-2 bg-gray-50 border-b border-gray-200">
         <h4 className="font-medium text-gray-900 flex items-center">
           <DocumentTextIcon className="w-4 h-4 mr-2 text-gray-600" />
           {title}
