@@ -9,7 +9,7 @@ const Navigation = () => {
     { href: '/', label: '首页', description: '文件浏览器主页' },
     { href: '/features', label: '功能特性', description: '查看所有功能特性' },
     { href: '/docs', label: '使用文档', description: '安装配置指南' },
-    { href: '/about', label: '关于我们', description: '了解项目背景' },
+    { href: '/about', label: '关于', description: '了解项目背景' },
   ];
 
   return (
