@@ -1,0 +1,90 @@
+{
+  "project": {
+    "name": "专业文件浏览器",
+    "version": "1.0.0",
+    "description": "现代化在线文件管理工具",
+    "author": {
+      "name": "开发团队",
+      "email": "dev@example.com",
+      "website": "https://example.com"
+    }
+  },
+  "features": [
+    {
+      "id": 1,
+      "name": "分栏视图",
+      "description": "类似 macOS Finder 的多栏导航体验",
+      "status": "completed",
+      "priority": "high"
+    },
+    {
+      "id": 2,
+      "name": "文件预览",
+      "description": "支持20+种文件格式的在线预览",
+      "status": "completed",
+      "priority": "high",
+      "supportedFormats": [
+        "images", "videos", "audio", "documents", 
+        "code", "markdown", "json", "csv"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "搜索功能",
+      "description": "快速搜索文件和文件夹",
+      "status": "planned",
+      "priority": "medium"
+    }
+  ],
+  "techStack": {
+    "frontend": {
+      "framework": "Next.js",
+      "version": "15.0.0",
+      "language": "TypeScript",
+      "styling": "Tailwind CSS",
+      "icons": "Heroicons"
+    },
+    "backend": {
+      "runtime": "Node.js",
+      "api": "Next.js API Routes",
+      "fileSystem": "Node.js fs module"
+    }
+  },
+  "supportedFileTypes": {
+    "images": [".jpg", ".jpeg", ".png", ".gif", ".svg", ".webp", ".bmp"],
+    "videos": [".mp4", ".webm", ".ogv", ".mov", ".avi", ".wmv"],
+    "audio": [".mp3", ".wav", ".ogg", ".aac", ".m4a", ".flac"],
+    "documents": [".pdf", ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx"],
+    "code": [".js", ".ts", ".jsx", ".tsx", ".py", ".java", ".cpp", ".c", ".php", ".go", ".rs"],
+    "data": [".json", ".csv", ".xml", ".yaml", ".yml"],
+    "text": [".txt", ".md", ".log", ".conf", ".ini"]
+  },
+  "configuration": {
+    "modes": {
+      "local": {
+        "description": "浏览本地文件系统",
+        "configKey": "ROOT_PATH"
+      },
+      "files": {
+        "description": "浏览项目文件夹",
+        "configKey": "FILES_FOLDER_PATH"
+      }
+    },
+    "limits": {
+      "maxFileSize": "1MB",
+      "csvRowLimit": {
+        "normal": 10,
+        "expanded": 50
+      }
+    }
+  },
+  "statistics": {
+    "totalFiles": 156,
+    "totalFolders": 23,
+    "lastUpdated": "2024-12-08T10:30:00Z",
+    "performance": {
+      "averageLoadTime": "0.3s",
+      "cacheHitRate": "85%"
+    }
+  }
+}

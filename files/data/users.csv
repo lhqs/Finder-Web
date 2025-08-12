@@ -1,0 +1,16 @@
+id,name,email,role,department,join_date,salary,status
+1,张三,zhangsan@example.com,开发工程师,技术部,2023-01-15,12000,active
+2,李四,lisi@example.com,产品经理,产品部,2023-02-20,15000,active
+3,王五,wangwu@example.com,UI设计师,设计部,2023-03-10,10000,active
+4,赵六,zhaoliu@example.com,测试工程师,技术部,2023-04-05,9000,active
+5,钱七,qianqi@example.com,运营专员,运营部,2023-05-12,8000,active
+6,孙八,sunba@example.com,前端工程师,技术部,2023-06-18,11000,active
+7,周九,zhoujiu@example.com,后端工程师,技术部,2023-07-22,13000,active
+8,吴十,wushi@example.com,数据分析师,数据部,2023-08-30,14000,active
+9,郑一,zhengyi@example.com,项目经理,项目部,2023-09-15,16000,active
+10,陈二,chener@example.com,HR专员,人事部,2023-10-08,7500,active
+11,刘三,liusan@example.com,财务专员,财务部,2023-11-12,8500,active
+12,黄四,huangsi@example.com,市场专员,市场部,2023-12-01,9500,active
+13,林五,linwu@example.com,客服专员,客服部,2024-01-10,7000,active
+14,杨六,yangliu@example.com,运维工程师,技术部,2024-02-14,12500,active
+15,朱七,zhuqi@example.com,安全工程师,技术部,2024-03-20,14500,active
