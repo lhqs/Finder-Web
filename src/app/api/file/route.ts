@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 import config from '../../../../config/app.config';
+import { findFileByPath } from '@/utils/staticFileSystem';
 
 // 获取根路径配置
 const getRootPath = (): string => {
@@ -20,6 +21,25 @@ export async function GET(request: NextRequest) {
 
   if (!filePath) {
     return NextResponse.json({ error: 'Path parameter is required' }, { status: 400 });
+  }
+
+  // 如果是静态部署环境，使用静态文件服务
+  if (config.isStaticDeploy) {
+    try {
+      const fileItem = findFileByPath(filePath);
+      
+      if (!fileItem || fileItem.type === 'folder') {
+        return NextResponse.json({ error: 'File not found' }, { status: 404 });
+      }
+
+      // 对于静态部署，重定向到 public 文件
+      const publicPath = `/files${filePath}`;
+      return NextResponse.redirect(new URL(publicPath, request.url));
+      
+    } catch (error) {
+      console.error('Error serving static file:', error);
+      return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+    }
   }
 
   try {

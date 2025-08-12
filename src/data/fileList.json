@@ -1,0 +1,369 @@
+[
+  {
+    "id": "多级文件演示",
+    "name": "多级文件演示",
+    "type": "folder",
+    "path": "/多级文件演示",
+    "modified": "2025-08-12T08:49:24.470Z",
+    "children": [
+      {
+        "id": "多级文件演示/ sub1",
+        "name": " sub1",
+        "type": "folder",
+        "path": "/多级文件演示/ sub1",
+        "modified": "2025-08-12T08:36:30.651Z",
+        "children": [
+          {
+            "id": "多级文件演示/ sub1/ sub2",
+            "name": " sub2",
+            "type": "folder",
+            "path": "/多级文件演示/ sub1/ sub2",
+            "modified": "2025-08-12T08:36:41.884Z",
+            "children": [
+              {
+                "id": "多级文件演示/ sub1/ sub2/sub3",
+                "name": "sub3",
+                "type": "folder",
+                "path": "/多级文件演示/ sub1/ sub2/sub3",
+                "modified": "2025-08-12T08:36:46.884Z",
+                "children": [
+                  {
+                    "id": "多级文件演示/ sub1/ sub2/sub3/sub4",
+                    "name": "sub4",
+                    "type": "folder",
+                    "path": "/多级文件演示/ sub1/ sub2/sub3/sub4",
+                    "modified": "2025-08-12T08:48:47.540Z",
+                    "children": [
+                      {
+                        "id": "多级文件演示/ sub1/ sub2/sub3/sub4/sub5",
+                        "name": "sub5",
+                        "type": "folder",
+                        "path": "/多级文件演示/ sub1/ sub2/sub3/sub4/sub5",
+                        "modified": "2025-08-12T08:38:42.759Z",
+                        "children": [
+                          {
+                            "id": "多级文件演示/ sub1/ sub2/sub3/sub4/sub5/one.txt",
+                            "name": "one.txt",
+                            "type": "file",
+                            "path": "/多级文件演示/ sub1/ sub2/sub3/sub4/sub5/one.txt",
+                            "size": 18,
+                            "modified": "2025-08-12T08:39:02.635Z",
+                            "mimeType": "text/plain",
+                            "content": "文本案例内容"
+                          }
+                        ]
+                      },
+                      {
+                        "id": "多级文件演示/ sub1/ sub2/sub3/sub4/.DS_Store",
+                        "name": ".DS_Store",
+                        "type": "file",
+                        "path": "/多级文件演示/ sub1/ sub2/sub3/sub4/.DS_Store",
+                        "size": 6148,
+                        "modified": "2025-08-12T08:48:47.541Z",
+                        "mimeType": "application/octet-stream"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "多级文件演示/ sub1/ sub2/sub3/.DS_Store",
+                    "name": ".DS_Store",
+                    "type": "file",
+                    "path": "/多级文件演示/ sub1/ sub2/sub3/.DS_Store",
+                    "size": 6148,
+                    "modified": "2025-08-12T08:36:46.885Z",
+                    "mimeType": "application/octet-stream"
+                  }
+                ]
+              },
+              {
+                "id": "多级文件演示/ sub1/ sub2/.DS_Store",
+                "name": ".DS_Store",
+                "type": "file",
+                "path": "/多级文件演示/ sub1/ sub2/.DS_Store",
+                "size": 6148,
+                "modified": "2025-08-12T08:36:41.885Z",
+                "mimeType": "application/octet-stream"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "多级文件演示/level2",
+        "name": "level2",
+        "type": "folder",
+        "path": "/多级文件演示/level2",
+        "modified": "2025-08-12T08:49:35.019Z",
+        "children": [
+          {
+            "id": "多级文件演示/level2/中文文件夹",
+            "name": "中文文件夹",
+            "type": "folder",
+            "path": "/多级文件演示/level2/中文文件夹",
+            "modified": "2025-08-12T08:49:35.019Z",
+            "children": [
+              {
+                "id": "多级文件演示/level2/中文文件夹/测试文件.md",
+                "name": "测试文件.md",
+                "type": "file",
+                "path": "/多级文件演示/level2/中文文件夹/测试文件.md",
+                "size": 1019,
+                "modified": "2025-08-12T08:49:41.149Z",
+                "mimeType": "text/markdown",
+                "content": "# 中文文件名测试\n\n这个文件用于测试文件浏览器对中文文件名和文件夹名的支持。\n\n## 测试内容\n\n### 文件名支持\n- ✅ 中文文件名\n- ✅ 中文文件夹名\n- ✅ 混合字符（中英文数字）\n- ✅ 特殊字符处理\n\n### 编码测试\n文件内容使用 UTF-8 编码，包含：\n- 简体中文：你好世界\n- 繁体中文：你好世界\n- 日文：こんにちは世界\n- 韩文：안녕하세요 세계\n- 俄文：Привет мир\n- 阿拉伯文：مرحبا بالعالم\n\n### 路径测试\n当前文件路径包含多个中文目录：\n```\n/多级文件演示/level2/中文文件夹/测试文件.md\n```\n\n### 功能验证\n1. 文件夹导航 ✅\n2. 文件预览 ✅\n3. Markdown 渲染 ✅\n4. 中文搜索（待实现）\n5. 文件下载（待实现）\n\n## 注意事项\n\n在处理中文文件名时需要注意：\n- URL 编码问题\n- 文件系统兼容性\n- 浏览器显示问题\n- 服务器配置\n\n这个测试文件验证了系统对国际化文件名的良好支持。"
+              }
+            ]
+          },
+          {
+            "id": "多级文件演示/level2/level3",
+            "name": "level3",
+            "type": "folder",
+            "path": "/多级文件演示/level2/level3",
+            "modified": "2025-08-12T08:49:24.471Z",
+            "children": [
+              {
+                "id": "多级文件演示/level2/level3/deep-file.txt",
+                "name": "deep-file.txt",
+                "type": "file",
+                "path": "/多级文件演示/level2/level3/deep-file.txt",
+                "size": 672,
+                "modified": "2025-08-12T08:49:29.638Z",
+                "mimeType": "text/plain",
+                "content": "这是一个位于深层目录结构中的文件。\n\n路径: /多级文件演示/level2/level3/deep-file.txt\n\n这个文件用于演示文件浏览器的多级目录导航功能。\n用户可以通过分栏视图逐级展开文件夹，直到找到这个深层文件。\n\n目录层级:\n1. 根目录 (/)\n2. 多级文件演示/\n3. level2/\n4. level3/\n5. deep-file.txt (当前文件)\n\n文件浏览器的分栏视图设计让用户能够：\n- 清晰地看到当前所在的路径\n- 快速回到上级目录\n- 在不同层级之间自由导航\n- 保持良好的空间感知\n\n这种设计灵感来自 macOS 的 Finder 应用，\n为用户提供直观、高效的文件管理体验。"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "多级文件演示/.DS_Store",
+        "name": ".DS_Store",
+        "type": "file",
+        "path": "/多级文件演示/.DS_Store",
+        "size": 6148,
+        "modified": "2025-08-12T08:36:33.766Z",
+        "mimeType": "application/octet-stream"
+      }
+    ]
+  },
+  {
+    "id": "code-samples",
+    "name": "code-samples",
+    "type": "folder",
+    "path": "/code-samples",
+    "modified": "2025-08-12T08:45:48.547Z",
+    "children": [
+      {
+        "id": "code-samples/Component.tsx",
+        "name": "Component.tsx",
+        "type": "file",
+        "path": "/code-samples/Component.tsx",
+        "size": 4478,
+        "modified": "2025-08-12T08:46:04.422Z",
+        "mimeType": "text/typescript",
+        "content": "import React, { useState, useEffect, useCallback } from 'react';\nimport { ChevronRightIcon, DocumentIcon, FolderIcon } from '@heroicons/react/24/outline';\n\n// TypeScript 接口定义\ninterface FileItem {\n  name: string;\n  type: 'file' | 'directory';\n  size?: number;\n  lastModified?: Date;\n  path: string;\n}\n\ninterface FileExplorerProps {\n  rootPath: string;\n  onFileSelect?: (file: FileItem) => void;\n  className?: string;\n}\n\n// React 函数组件示例\nconst FileExplorer: React.FC<FileExplorerProps> = ({\n  rootPath,\n  onFileSelect,\n  className = ''\n}) => {\n  const [files, setFiles] = useState<FileItem[]>([]);\n  const [loading, setLoading] = useState(false);\n  const [error, setError] = useState<string | null>(null);\n  const [selectedFile, setSelectedFile] = useState<FileItem | null>(null);\n\n  // 获取文件列表的异步函数\n  const fetchFiles = useCallback(async (path: string) => {\n    setLoading(true);\n    setError(null);\n\n    try {\n      const response = await fetch(`/api/files?path=${encodeURIComponent(path)}`);\n      \n      if (!response.ok) {\n        throw new Error(`HTTP ${response.status}: ${response.statusText}`);\n      }\n\n      const data = await response.json();\n      setFiles(data.files || []);\n    } catch (err) {\n      const errorMessage = err instanceof Error ? err.message : '未知错误';\n      setError(`加载文件失败: ${errorMessage}`);\n      console.error('文件加载错误:', err);\n    } finally {\n      setLoading(false);\n    }\n  }, []);\n\n  // 组件挂载时获取文件\n  useEffect(() => {\n    fetchFiles(rootPath);\n  }, [rootPath, fetchFiles]);\n\n  // 处理文件选择\n  const handleFileClick = (file: FileItem) => {\n    setSelectedFile(file);\n    onFileSelect?.(file);\n  };\n\n  // 格式化文件大小\n  const formatFileSize = (size?: number): string => {\n    if (!size) return '-';\n    \n    const units = ['B', 'KB', 'MB', 'GB'];\n    let unitIndex = 0;\n    let fileSize = size;\n\n    while (fileSize >= 1024 && unitIndex < units.length - 1) {\n      fileSize /= 1024;\n      unitIndex++;\n    }\n\n    return `${fileSize.toFixed(1)} ${units[unitIndex]}`;\n  };\n\n  // 渲染文件项\n  const renderFileItem = (file: FileItem) => {\n    const isSelected = selectedFile?.path === file.path;\n    const Icon = file.type === 'directory' ? FolderIcon : DocumentIcon;\n\n    return (\n      <div\n        key={file.path}\n        className={`\n          flex items-center p-3 cursor-pointer rounded-lg transition-colors\n          ${isSelected \n            ? 'bg-blue-100 border-blue-300' \n            : 'hover:bg-gray-50 border-transparent'\n          }\n          border\n        `}\n        onClick={() => handleFileClick(file)}\n      >\n        <Icon className=\"w-5 h-5 mr-3 text-gray-500\" />\n        \n        <div className=\"flex-1 min-w-0\">\n          <p className=\"text-sm font-medium text-gray-900 truncate\">\n            {file.name}\n          </p>\n          <p className=\"text-xs text-gray-500\">\n            {formatFileSize(file.size)} • {file.lastModified?.toLocaleDateString()}\n          </p>\n        </div>\n\n        {file.type === 'directory' && (\n          <ChevronRightIcon className=\"w-4 h-4 text-gray-400\" />\n        )}\n      </div>\n    );\n  };\n\n  return (\n    <div className={`file-explorer ${className}`}>\n      <div className=\"mb-4\">\n        <h2 className=\"text-lg font-semibold text-gray-900\">\n          文件浏览器\n        </h2>\n        <p className=\"text-sm text-gray-600\">\n          当前路径: {rootPath}\n        </p>\n      </div>\n\n      {loading && (\n        <div className=\"flex items-center justify-center py-8\">\n          <div className=\"animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600\"></div>\n          <span className=\"ml-2 text-gray-600\">加载中...</span>\n        </div>\n      )}\n\n      {error && (\n        <div className=\"bg-red-50 border border-red-200 rounded-lg p-4 mb-4\">\n          <p className=\"text-red-800\">{error}</p>\n          <button\n            onClick={() => fetchFiles(rootPath)}\n            className=\"mt-2 text-sm text-red-600 hover:text-red-800 underline\"\n          >\n            重试\n          </button>\n        </div>\n      )}\n\n      {!loading && !error && (\n        <div className=\"space-y-1\">\n          {files.length === 0 ? (\n            <p className=\"text-gray-500 text-center py-8\">\n              此文件夹为空\n            </p>\n          ) : (\n            files.map(renderFileItem)\n          )}\n        </div>\n      )}\n    </div>\n  );\n};\n\nexport default FileExplorer;"
+      },
+      {
+        "id": "code-samples/example.py",
+        "name": "example.py",
+        "type": "file",
+        "path": "/code-samples/example.py",
+        "size": 3289,
+        "modified": "2025-08-12T08:45:44.044Z",
+        "mimeType": "text/plain",
+        "content": "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n\"\"\"\nPython 示例文件\n演示 Python 代码的语法高亮功能\n\"\"\"\n\nimport os\nimport json\nfrom datetime import datetime\nfrom typing import List, Dict, Optional\n\nclass FileExplorer:\n    \"\"\"文件浏览器类\"\"\"\n    \n    def __init__(self, root_path: str):\n        self.root_path = root_path\n        self.supported_formats = {\n            'images': ['.jpg', '.png', '.gif', '.svg'],\n            'videos': ['.mp4', '.webm', '.mov'],\n            'documents': ['.pdf', '.doc', '.docx'],\n            'code': ['.py', '.js', '.ts', '.java', '.cpp']\n        }\n    \n    def scan_directory(self, path: str) -> List[Dict]:\n        \"\"\"扫描目录并返回文件列表\"\"\"\n        files = []\n        \n        try:\n            for item in os.listdir(path):\n                item_path = os.path.join(path, item)\n                \n                file_info = {\n                    'name': item,\n                    'path': item_path,\n                    'is_directory': os.path.isdir(item_path),\n                    'size': self._get_file_size(item_path),\n                    'modified': self._get_modified_time(item_path),\n                    'type': self._get_file_type(item)\n                }\n                \n                files.append(file_info)\n                \n        except PermissionError:\n            print(f\"权限不足，无法访问: {path}\")\n        except FileNotFoundError:\n            print(f\"路径不存在: {path}\")\n            \n        return sorted(files, key=lambda x: (not x['is_directory'], x['name']))\n    \n    def _get_file_size(self, path: str) -> Optional[int]:\n        \"\"\"获取文件大小\"\"\"\n        try:\n            return os.path.getsize(path) if os.path.isfile(path) else None\n        except OSError:\n            return None\n    \n    def _get_modified_time(self, path: str) -> str:\n        \"\"\"获取修改时间\"\"\"\n        try:\n            timestamp = os.path.getmtime(path)\n            return datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S')\n        except OSError:\n            return \"未知\"\n    \n    def _get_file_type(self, filename: str) -> str:\n        \"\"\"根据文件扩展名判断文件类型\"\"\"\n        _, ext = os.path.splitext(filename.lower())\n        \n        for category, extensions in self.supported_formats.items():\n            if ext in extensions:\n                return category\n        \n        return 'other'\n    \n    def format_size(self, size: Optional[int]) -> str:\n        \"\"\"格式化文件大小\"\"\"\n        if size is None:\n            return \"-\"\n        \n        units = ['B', 'KB', 'MB', 'GB', 'TB']\n        unit_index = 0\n        \n        while size >= 1024 and unit_index < len(units) - 1:\n            size /= 1024\n            unit_index += 1\n        \n        return f\"{size:.1f} {units[unit_index]}\"\n\ndef main():\n    \"\"\"主函数\"\"\"\n    explorer = FileExplorer('/files')\n    files = explorer.scan_directory('/files')\n    \n    print(\"文件浏览器 - Python 版本\")\n    print(\"=\" * 40)\n    \n    for file_info in files:\n        icon = \"📁\" if file_info['is_directory'] else \"📄\"\n        size = explorer.format_size(file_info['size'])\n        \n        print(f\"{icon} {file_info['name']:<30} {size:>10} {file_info['modified']}\")\n\nif __name__ == \"__main__\":\n    main()"
+      },
+      {
+        "id": "code-samples/hello.js",
+        "name": "hello.js",
+        "type": "file",
+        "path": "/code-samples/hello.js",
+        "size": 1436,
+        "modified": "2025-08-12T08:45:29.573Z",
+        "mimeType": "text/javascript",
+        "content": "// JavaScript 示例文件\n// 演示代码语法高亮功能\n\n/**\n * 问候函数\n * @param {string} name - 姓名\n * @returns {string} 问候语\n */\nfunction greet(name) {\n    if (!name) {\n        throw new Error('姓名不能为空');\n    }\n    \n    return `你好，${name}！欢迎使用文件浏览器。`;\n}\n\n// 异步函数示例\nasync function fetchUserData(userId) {\n    try {\n        const response = await fetch(`/api/users/${userId}`);\n        const userData = await response.json();\n        \n        return {\n            success: true,\n            data: userData\n        };\n    } catch (error) {\n        console.error('获取用户数据失败:', error);\n        return {\n            success: false,\n            error: error.message\n        };\n    }\n}\n\n// 类定义示例\nclass FileManager {\n    constructor(rootPath) {\n        this.rootPath = rootPath;\n        this.files = new Map();\n    }\n    \n    addFile(filename, content) {\n        this.files.set(filename, {\n            content,\n            createdAt: new Date(),\n            size: content.length\n        });\n    }\n    \n    getFile(filename) {\n        return this.files.get(filename);\n    }\n    \n    listFiles() {\n        return Array.from(this.files.keys());\n    }\n}\n\n// 使用示例\nconst manager = new FileManager('/files');\nmanager.addFile('example.txt', '这是示例内容');\n\nconsole.log(greet('开发者'));\nconsole.log('文件列表:', manager.listFiles());"
+      }
+    ]
+  },
+  {
+    "id": "config",
+    "name": "config",
+    "type": "folder",
+    "path": "/config",
+    "modified": "2025-08-12T08:48:33.939Z",
+    "children": [
+      {
+        "id": "config/database.sql",
+        "name": "database.sql",
+        "type": "file",
+        "path": "/config/database.sql",
+        "size": 5945,
+        "modified": "2025-08-12T08:48:28.607Z",
+        "mimeType": "text/plain",
+        "content": "-- 文件浏览器数据库结构\n-- SQL 示例文件，演示代码语法高亮功能\n\n-- 创建数据库\nCREATE DATABASE IF NOT EXISTS file_browser \nCHARACTER SET utf8mb4 \nCOLLATE utf8mb4_unicode_ci;\n\nUSE file_browser;\n\n-- 用户表\nCREATE TABLE users (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    username VARCHAR(50) NOT NULL UNIQUE,\n    email VARCHAR(100) NOT NULL UNIQUE,\n    password_hash VARCHAR(255) NOT NULL,\n    full_name VARCHAR(100),\n    avatar_url VARCHAR(255),\n    role ENUM('admin', 'user', 'guest') DEFAULT 'user',\n    status ENUM('active', 'inactive', 'suspended') DEFAULT 'active',\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n    last_login_at TIMESTAMP NULL,\n    \n    INDEX idx_username (username),\n    INDEX idx_email (email),\n    INDEX idx_status (status),\n    INDEX idx_created_at (created_at)\n);\n\n-- 文件系统表\nCREATE TABLE file_systems (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    name VARCHAR(100) NOT NULL,\n    type ENUM('local', 'cloud', 'network') NOT NULL,\n    root_path VARCHAR(500) NOT NULL,\n    config JSON,\n    is_active BOOLEAN DEFAULT TRUE,\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n    \n    INDEX idx_type (type),\n    INDEX idx_active (is_active)\n);\n\n-- 文件访问日志表\nCREATE TABLE file_access_logs (\n    id BIGINT PRIMARY KEY AUTO_INCREMENT,\n    user_id INT,\n    file_path VARCHAR(1000) NOT NULL,\n    action ENUM('view', 'download', 'preview', 'search') NOT NULL,\n    file_size BIGINT,\n    file_type VARCHAR(50),\n    ip_address VARCHAR(45),\n    user_agent TEXT,\n    access_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n    response_time_ms INT,\n    \n    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL,\n    INDEX idx_user_id (user_id),\n    INDEX idx_file_path (file_path(255)),\n    INDEX idx_action (action),\n    INDEX idx_access_time (access_time),\n    INDEX idx_file_type (file_type)\n);\n\n-- 用户偏好设置表\nCREATE TABLE user_preferences (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    user_id INT NOT NULL,\n    preference_key VARCHAR(100) NOT NULL,\n    preference_value JSON,\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n    \n    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,\n    UNIQUE KEY uk_user_preference (user_id, preference_key),\n    INDEX idx_user_id (user_id)\n);\n\n-- 文件收藏表\nCREATE TABLE file_favorites (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    user_id INT NOT NULL,\n    file_path VARCHAR(1000) NOT NULL,\n    file_name VARCHAR(255) NOT NULL,\n    file_type VARCHAR(50),\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n    \n    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,\n    UNIQUE KEY uk_user_file (user_id, file_path(255)),\n    INDEX idx_user_id (user_id),\n    INDEX idx_file_type (file_type)\n);\n\n-- 插入示例数据\nINSERT INTO users (username, email, password_hash, full_name, role) VALUES\n('admin', 'admin@example.com', '$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewdBPj/VcQjyQ/EG', '系统管理员', 'admin'),\n('demo_user', 'demo@example.com', '$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewdBPj/VcQjyQ/EG', '演示用户', 'user'),\n('guest_user', 'guest@example.com', '$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewdBPj/VcQjyQ/EG', '访客用户', 'guest');\n\nINSERT INTO file_systems (name, type, root_path, config) VALUES\n('本地文件系统', 'local', '/files', '{\"maxFileSize\": \"100MB\", \"allowedTypes\": [\"*\"]}'),\n('云存储', 'cloud', 's3://my-bucket/files', '{\"provider\": \"aws\", \"region\": \"us-east-1\"}'),\n('网络存储', 'network', '//server/shared/files', '{\"protocol\": \"smb\", \"timeout\": 30}');\n\n-- 创建视图：用户文件访问统计\nCREATE VIEW user_file_stats AS\nSELECT \n    u.id as user_id,\n    u.username,\n    u.full_name,\n    COUNT(fal.id) as total_accesses,\n    COUNT(DISTINCT fal.file_path) as unique_files,\n    COUNT(CASE WHEN fal.action = 'view' THEN 1 END) as views,\n    COUNT(CASE WHEN fal.action = 'download' THEN 1 END) as downloads,\n    MAX(fal.access_time) as last_access,\n    AVG(fal.response_time_ms) as avg_response_time\nFROM users u\nLEFT JOIN file_access_logs fal ON u.id = fal.user_id\nGROUP BY u.id, u.username, u.full_name;\n\n-- 创建存储过程：清理旧日志\nDELIMITER //\nCREATE PROCEDURE CleanOldLogs(IN days_to_keep INT)\nBEGIN\n    DECLARE rows_deleted INT DEFAULT 0;\n    \n    DELETE FROM file_access_logs \n    WHERE access_time < DATE_SUB(NOW(), INTERVAL days_to_keep DAY);\n    \n    SET rows_deleted = ROW_COUNT();\n    \n    SELECT CONCAT('已删除 ', rows_deleted, ' 条旧日志记录') as result;\nEND //\nDELIMITER ;\n\n-- 创建触发器：记录用户最后登录时间\nDELIMITER //\nCREATE TRIGGER update_last_login \nAFTER INSERT ON file_access_logs\nFOR EACH ROW\nBEGIN\n    IF NEW.user_id IS NOT NULL THEN\n        UPDATE users \n        SET last_login_at = NEW.access_time \n        WHERE id = NEW.user_id \n        AND (last_login_at IS NULL OR last_login_at < NEW.access_time);\n    END IF;\nEND //\nDELIMITER ;\n\n-- 创建索引优化查询性能\nCREATE INDEX idx_file_access_composite ON file_access_logs(user_id, access_time, action);\nCREATE INDEX idx_file_path_hash ON file_access_logs(file_path(100));\n\n-- 查询示例\n-- 1. 获取最活跃的用户\nSELECT * FROM user_file_stats \nORDER BY total_accesses DESC \nLIMIT 10;\n\n-- 2. 获取最受欢迎的文件类型\nSELECT \n    file_type,\n    COUNT(*) as access_count,\n    COUNT(DISTINCT user_id) as unique_users\nFROM file_access_logs \nWHERE file_type IS NOT NULL\nGROUP BY file_type \nORDER BY access_count DESC;\n\n-- 3. 获取用户的收藏文件\nSELECT \n    ff.file_name,\n    ff.file_path,\n    ff.file_type,\n    ff.created_at as favorited_at\nFROM file_favorites ff\nJOIN users u ON ff.user_id = u.id\nWHERE u.username = 'demo_user'\nORDER BY ff.created_at DESC;"
+      },
+      {
+        "id": "config/nginx.conf",
+        "name": "nginx.conf",
+        "type": "file",
+        "path": "/config/nginx.conf",
+        "size": 6018,
+        "modified": "2025-08-12T08:48:56.989Z",
+        "mimeType": "text/plain",
+        "content": "# Nginx 配置文件示例\n# 用于部署文件浏览器应用\n\n# 全局配置\nuser nginx;\nworker_processes auto;\nerror_log /var/log/nginx/error.log warn;\npid /var/run/nginx.pid;\n\n# 事件配置\nevents {\n    worker_connections 1024;\n    use epoll;\n    multi_accept on;\n}\n\n# HTTP 配置\nhttp {\n    # 基础设置\n    include /etc/nginx/mime.types;\n    default_type application/octet-stream;\n    \n    # 日志格式\n    log_format main '$remote_addr - $remote_user [$time_local] \"$request\" '\n                    '$status $body_bytes_sent \"$http_referer\" '\n                    '\"$http_user_agent\" \"$http_x_forwarded_for\"';\n    \n    access_log /var/log/nginx/access.log main;\n    \n    # 性能优化\n    sendfile on;\n    tcp_nopush on;\n    tcp_nodelay on;\n    keepalive_timeout 65;\n    types_hash_max_size 2048;\n    client_max_body_size 100M;\n    \n    # Gzip 压缩\n    gzip on;\n    gzip_vary on;\n    gzip_min_length 1024;\n    gzip_proxied any;\n    gzip_comp_level 6;\n    gzip_types\n        text/plain\n        text/css\n        text/xml\n        text/javascript\n        application/json\n        application/javascript\n        application/xml+rss\n        application/atom+xml\n        image/svg+xml;\n    \n    # 安全头\n    add_header X-Frame-Options \"SAMEORIGIN\" always;\n    add_header X-XSS-Protection \"1; mode=block\" always;\n    add_header X-Content-Type-Options \"nosniff\" always;\n    add_header Referrer-Policy \"no-referrer-when-downgrade\" always;\n    add_header Content-Security-Policy \"default-src 'self' http: https: data: blob: 'unsafe-inline'\" always;\n    \n    # 上游服务器配置\n    upstream file_browser_app {\n        server 127.0.0.1:3000;\n        keepalive 32;\n    }\n    \n    # 主服务器配置\n    server {\n        listen 80;\n        server_name file-browser.example.com;\n        \n        # 重定向到 HTTPS\n        return 301 https://$server_name$request_uri;\n    }\n    \n    # HTTPS 服务器配置\n    server {\n        listen 443 ssl http2;\n        server_name file-browser.example.com;\n        \n        # SSL 证书配置\n        ssl_certificate /etc/ssl/certs/file-browser.crt;\n        ssl_certificate_key /etc/ssl/private/file-browser.key;\n        \n        # SSL 安全配置\n        ssl_protocols TLSv1.2 TLSv1.3;\n        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384;\n        ssl_prefer_server_ciphers off;\n        ssl_session_cache shared:SSL:10m;\n        ssl_session_timeout 10m;\n        \n        # 根目录\n        root /var/www/file-browser;\n        index index.html;\n        \n        # 静态文件缓存\n        location ~* \\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {\n            expires 1y;\n            add_header Cache-Control \"public, immutable\";\n            add_header Vary Accept-Encoding;\n        }\n        \n        # Next.js 静态文件\n        location /_next/static/ {\n            alias /var/www/file-browser/.next/static/;\n            expires 1y;\n            add_header Cache-Control \"public, immutable\";\n        }\n        \n        # API 路由代理\n        location /api/ {\n            proxy_pass http://file_browser_app;\n            proxy_http_version 1.1;\n            proxy_set_header Upgrade $http_upgrade;\n            proxy_set_header Connection 'upgrade';\n            proxy_set_header Host $host;\n            proxy_set_header X-Real-IP $remote_addr;\n            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n            proxy_set_header X-Forwarded-Proto $scheme;\n            proxy_cache_bypass $http_upgrade;\n            \n            # 超时设置\n            proxy_connect_timeout 60s;\n            proxy_send_timeout 60s;\n            proxy_read_timeout 60s;\n        }\n        \n        # 文件下载路由\n        location /download/ {\n            proxy_pass http://file_browser_app;\n            proxy_http_version 1.1;\n            proxy_set_header Host $host;\n            proxy_set_header X-Real-IP $remote_addr;\n            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n            proxy_set_header X-Forwarded-Proto $scheme;\n            \n            # 大文件下载优化\n            proxy_buffering off;\n            proxy_request_buffering off;\n            proxy_max_temp_file_size 0;\n        }\n        \n        # 主应用代理\n        location / {\n            try_files $uri $uri/ @nextjs;\n        }\n        \n        location @nextjs {\n            proxy_pass http://file_browser_app;\n            proxy_http_version 1.1;\n            proxy_set_header Upgrade $http_upgrade;\n            proxy_set_header Connection 'upgrade';\n            proxy_set_header Host $host;\n            proxy_set_header X-Real-IP $remote_addr;\n            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n            proxy_set_header X-Forwarded-Proto $scheme;\n            proxy_cache_bypass $http_upgrade;\n        }\n        \n        # 健康检查\n        location /health {\n            access_log off;\n            return 200 \"healthy\\n\";\n            add_header Content-Type text/plain;\n        }\n        \n        # 安全配置\n        location ~ /\\. {\n            deny all;\n        }\n        \n        location ~ ~$ {\n            deny all;\n        }\n        \n        # 错误页面\n        error_page 404 /404.html;\n        error_page 500 502 503 504 /50x.html;\n        \n        location = /50x.html {\n            root /usr/share/nginx/html;\n        }\n    }\n    \n    # 开发环境配置\n    server {\n        listen 8080;\n        server_name localhost;\n        \n        location / {\n            proxy_pass http://127.0.0.1:3000;\n            proxy_http_version 1.1;\n            proxy_set_header Upgrade $http_upgrade;\n            proxy_set_header Connection 'upgrade';\n            proxy_set_header Host $host;\n            proxy_cache_bypass $http_upgrade;\n        }\n    }\n}\n\n# 流配置（如果需要流媒体支持）\n# rtmp {\n#     server {\n#         listen 1935;\n#         chunk_size 4096;\n#         \n#         application live {\n#             live on;\n#             record off;\n#         }\n#     }\n# }"
+      }
+    ]
+  },
+  {
+    "id": "data",
+    "name": "data",
+    "type": "folder",
+    "path": "/data",
+    "modified": "2025-08-12T08:46:27.700Z",
+    "children": [
+      {
+        "id": "data/sample.json",
+        "name": "sample.json",
+        "type": "file",
+        "path": "/data/sample.json",
+        "size": 2373,
+        "modified": "2025-08-12T08:46:22.692Z",
+        "mimeType": "application/json",
+        "content": "{\n  \"project\": {\n    \"name\": \"专业文件浏览器\",\n    \"version\": \"1.0.0\",\n    \"description\": \"现代化在线文件管理工具\",\n    \"author\": {\n      \"name\": \"开发团队\",\n      \"email\": \"dev@example.com\",\n      \"website\": \"https://example.com\"\n    }\n  },\n  \"features\": [\n    {\n      \"id\": 1,\n      \"name\": \"分栏视图\",\n      \"description\": \"类似 macOS Finder 的多栏导航体验\",\n      \"status\": \"completed\",\n      \"priority\": \"high\"\n    },\n    {\n      \"id\": 2,\n      \"name\": \"文件预览\",\n      \"description\": \"支持20+种文件格式的在线预览\",\n      \"status\": \"completed\",\n      \"priority\": \"high\",\n      \"supportedFormats\": [\n        \"images\", \"videos\", \"audio\", \"documents\", \n        \"code\", \"markdown\", \"json\", \"csv\"\n      ]\n    },\n    {\n      \"id\": 3,\n      \"name\": \"搜索功能\",\n      \"description\": \"快速搜索文件和文件夹\",\n      \"status\": \"planned\",\n      \"priority\": \"medium\"\n    }\n  ],\n  \"techStack\": {\n    \"frontend\": {\n      \"framework\": \"Next.js\",\n      \"version\": \"15.0.0\",\n      \"language\": \"TypeScript\",\n      \"styling\": \"Tailwind CSS\",\n      \"icons\": \"Heroicons\"\n    },\n    \"backend\": {\n      \"runtime\": \"Node.js\",\n      \"api\": \"Next.js API Routes\",\n      \"fileSystem\": \"Node.js fs module\"\n    }\n  },\n  \"supportedFileTypes\": {\n    \"images\": [\".jpg\", \".jpeg\", \".png\", \".gif\", \".svg\", \".webp\", \".bmp\"],\n    \"videos\": [\".mp4\", \".webm\", \".ogv\", \".mov\", \".avi\", \".wmv\"],\n    \"audio\": [\".mp3\", \".wav\", \".ogg\", \".aac\", \".m4a\", \".flac\"],\n    \"documents\": [\".pdf\", \".doc\", \".docx\", \".xls\", \".xlsx\", \".ppt\", \".pptx\"],\n    \"code\": [\".js\", \".ts\", \".jsx\", \".tsx\", \".py\", \".java\", \".cpp\", \".c\", \".php\", \".go\", \".rs\"],\n    \"data\": [\".json\", \".csv\", \".xml\", \".yaml\", \".yml\"],\n    \"text\": [\".txt\", \".md\", \".log\", \".conf\", \".ini\"]\n  },\n  \"configuration\": {\n    \"modes\": {\n      \"local\": {\n        \"description\": \"浏览本地文件系统\",\n        \"configKey\": \"ROOT_PATH\"\n      },\n      \"files\": {\n        \"description\": \"浏览项目文件夹\",\n        \"configKey\": \"FILES_FOLDER_PATH\"\n      }\n    },\n    \"limits\": {\n      \"maxFileSize\": \"1MB\",\n      \"csvRowLimit\": {\n        \"normal\": 10,\n        \"expanded\": 50\n      }\n    }\n  },\n  \"statistics\": {\n    \"totalFiles\": 156,\n    \"totalFolders\": 23,\n    \"lastUpdated\": \"2024-12-08T10:30:00Z\",\n    \"performance\": {\n      \"averageLoadTime\": \"0.3s\",\n      \"cacheHitRate\": \"85%\"\n    }\n  }\n}"
+      },
+      {
+        "id": "data/users.csv",
+        "name": "users.csv",
+        "type": "file",
+        "path": "/data/users.csv",
+        "size": 1195,
+        "modified": "2025-08-12T08:46:34.515Z",
+        "mimeType": "text/csv",
+        "content": "id,name,email,role,department,join_date,salary,status\n1,张三,zhangsan@example.com,开发工程师,技术部,2023-01-15,12000,active\n2,李四,lisi@example.com,产品经理,产品部,2023-02-20,15000,active\n3,王五,wangwu@example.com,UI设计师,设计部,2023-03-10,10000,active\n4,赵六,zhaoliu@example.com,测试工程师,技术部,2023-04-05,9000,active\n5,钱七,qianqi@example.com,运营专员,运营部,2023-05-12,8000,active\n6,孙八,sunba@example.com,前端工程师,技术部,2023-06-18,11000,active\n7,周九,zhoujiu@example.com,后端工程师,技术部,2023-07-22,13000,active\n8,吴十,wushi@example.com,数据分析师,数据部,2023-08-30,14000,active\n9,郑一,zhengyi@example.com,项目经理,项目部,2023-09-15,16000,active\n10,陈二,chener@example.com,HR专员,人事部,2023-10-08,7500,active\n11,刘三,liusan@example.com,财务专员,财务部,2023-11-12,8500,active\n12,黄四,huangsi@example.com,市场专员,市场部,2023-12-01,9500,active\n13,林五,linwu@example.com,客服专员,客服部,2024-01-10,7000,active\n14,杨六,yangliu@example.com,运维工程师,技术部,2024-02-14,12500,active\n15,朱七,zhuqi@example.com,安全工程师,技术部,2024-03-20,14500,active"
+      }
+    ]
+  },
+  {
+    "id": "documents",
+    "name": "documents",
+    "type": "folder",
+    "path": "/documents",
+    "modified": "2025-08-12T08:45:13.638Z",
+    "children": [
+      {
+        "id": "documents/project-plan.md",
+        "name": "project-plan.md",
+        "type": "file",
+        "path": "/documents/project-plan.md",
+        "size": 1056,
+        "modified": "2025-08-12T08:45:19.674Z",
+        "mimeType": "text/markdown",
+        "content": "# 项目开发计划\n\n## 项目概述\n这是一个现代化的文件浏览器项目，采用 Next.js 和 TypeScript 开发。\n\n## 开发阶段\n\n### 第一阶段：基础功能 ✅\n- [x] 文件夹浏览\n- [x] 分栏视图\n- [x] 基础文件预览\n\n### 第二阶段：增强预览 🚧\n- [x] 图片预览\n- [x] 视频播放\n- [x] 代码高亮\n- [ ] PDF 预览\n- [ ] Office 文档预览\n\n### 第三阶段：用户体验 📋\n- [ ] 搜索功能\n- [ ] 文件操作\n- [ ] 主题切换\n- [ ] 快捷键支持\n\n## 技术栈\n\n| 技术 | 版本 | 用途 |\n|------|------|------|\n| Next.js | 15 | 前端框架 |\n| React | 19 | UI 库 |\n| TypeScript | 5 | 类型系统 |\n| Tailwind CSS | 4 | 样式框架 |\n\n## 代码示例\n\n```typescript\ninterface FileItem {\n  name: string;\n  type: 'file' | 'directory';\n  size?: number;\n  lastModified?: Date;\n}\n```\n\n## 重要提醒\n\n> **注意**: 这是一个演示项目，请不要在生产环境中直接使用。\n\n## 联系方式\n\n- 📧 Email: developer@example.com\n- 🌐 Website: https://example.com\n- 📱 GitHub: @developer"
+      },
+      {
+        "id": "documents/sample.txt",
+        "name": "sample.txt",
+        "type": "file",
+        "path": "/documents/sample.txt",
+        "size": 449,
+        "modified": "2025-08-12T08:45:09.182Z",
+        "mimeType": "text/plain",
+        "content": "这是一个纯文本文件示例。\n\n文件浏览器支持显示各种文本文件，包括：\n- .txt 文件\n- .log 日志文件\n- .conf 配置文件\n- 以及其他纯文本格式\n\n这个文件演示了基本的文本预览功能。\n文本内容会保持原有的格式和换行。\n\n支持中文、English、日本語、한국어 等多种语言。\n\n特殊字符测试：\n- 符号：@#$%^&*()\n- 数字：1234567890\n- 标点：，。！？；：\"\"''"
+      }
+    ]
+  },
+  {
+    "id": "images",
+    "name": "images",
+    "type": "folder",
+    "path": "/images",
+    "modified": "2025-08-12T08:47:35.790Z",
+    "children": [
+      {
+        "id": "images/sample.svg",
+        "name": "sample.svg",
+        "type": "file",
+        "path": "/images/sample.svg",
+        "size": 2569,
+        "modified": "2025-08-12T08:47:49.915Z",
+        "mimeType": "image/svg+xml"
+      }
+    ]
+  },
+  {
+    "id": "logs",
+    "name": "logs",
+    "type": "folder",
+    "path": "/logs",
+    "modified": "2025-08-12T08:49:02.222Z",
+    "children": [
+      {
+        "id": "logs/access.log",
+        "name": "access.log",
+        "type": "file",
+        "path": "/logs/access.log",
+        "size": 2791,
+        "modified": "2025-08-12T08:49:18.591Z",
+        "mimeType": "text/plain",
+        "content": "127.0.0.1 - - [08/Dec/2024:10:30:15 +0800] \"GET / HTTP/1.1\" 200 2048 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36\"\n127.0.0.1 - - [08/Dec/2024:10:30:16 +0800] \"GET /api/files?path=/ HTTP/1.1\" 200 1024 \"http://localhost:3000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36\"\n127.0.0.1 - - [08/Dec/2024:10:30:18 +0800] \"GET /api/files?path=/documents HTTP/1.1\" 200 512 \"http://localhost:3000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36\"\n192.168.1.100 - - [08/Dec/2024:10:31:22 +0800] \"GET / HTTP/1.1\" 200 2048 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\"\n192.168.1.100 - - [08/Dec/2024:10:31:25 +0800] \"GET /api/files?path=/images HTTP/1.1\" 200 768 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\"\n127.0.0.1 - - [08/Dec/2024:10:32:10 +0800] \"GET /api/file/content?path=/files/sample.txt HTTP/1.1\" 200 1536 \"http://localhost:3000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36\"\n10.0.0.50 - - [08/Dec/2024:10:33:45 +0800] \"GET / HTTP/1.1\" 200 2048 \"https://google.com/\" \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15\"\n10.0.0.50 - - [08/Dec/2024:10:33:47 +0800] \"GET /api/files?path=/ HTTP/1.1\" 200 1024 \"http://localhost:3000/\" \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15\"\n127.0.0.1 - - [08/Dec/2024:10:34:12 +0800] \"GET /api/file/content?path=/files/code-samples/hello.js HTTP/1.1\" 200 2048 \"http://localhost:3000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36\"\n192.168.1.100 - - [08/Dec/2024:10:35:30 +0800] \"GET /api/file/content?path=/files/data/sample.json HTTP/1.1\" 200 4096 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\"\n127.0.0.1 - - [08/Dec/2024:10:36:15 +0800] \"GET /api/files?path=/videos HTTP/1.1\" 404 256 \"http://localhost:3000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36\"\n127.0.0.1 - - [08/Dec/2024:10:37:22 +0800] \"POST /api/upload HTTP/1.1\" 413 128 \"http://localhost:3000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36\"\n192.168.1.100 - - [08/Dec/2024:10:38:45 +0800] \"GET /api/file/content?path=/files/documents/project-plan.md HTTP/1.1\" 200 3072 \"http://localhost:3000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\"\n10.0.0.50 - - [08/Dec/2024:10:39:10 +0800] \"GET /api/files?path=/code-samples HTTP/1.1\" 200 1536 \"http://localhost:3000/\" \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15\"\n127.0.0.1 - - [08/Dec/2024:10:40:33 +0800] \"GET /api/file/content?path=/files/web-files/index.html HTTP/1.1\" 200 5120 \"http://localhost:3000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36\""
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "name": "video",
+    "type": "folder",
+    "path": "/video",
+    "modified": "2025-08-12T08:48:47.252Z",
+    "children": [
+      {
+        "id": "video/video-case.mp4",
+        "name": "video-case.mp4",
+        "type": "file",
+        "path": "/video/video-case.mp4",
+        "size": 574823,
+        "modified": "2025-08-12T08:38:17.158Z",
+        "mimeType": "video/mp4"
+      }
+    ]
+  },
+  {
+    "id": "web-files",
+    "name": "web-files",
+    "type": "folder",
+    "path": "/web-files",
+    "modified": "2025-08-12T08:47:05.947Z",
+    "children": [
+      {
+        "id": "web-files/index.html",
+        "name": "index.html",
+        "type": "file",
+        "path": "/web-files/index.html",
+        "size": 5767,
+        "modified": "2025-08-12T08:47:00.284Z",
+        "mimeType": "text/html",
+        "content": "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>文件浏览器演示页面</title>\n    <style>\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n        \n        body {\n            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n            line-height: 1.6;\n            color: #333;\n            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\n            min-height: 100vh;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n        }\n        \n        .container {\n            background: white;\n            padding: 2rem;\n            border-radius: 12px;\n            box-shadow: 0 20px 40px rgba(0,0,0,0.1);\n            max-width: 600px;\n            width: 90%;\n            text-align: center;\n        }\n        \n        .logo {\n            width: 80px;\n            height: 80px;\n            background: #667eea;\n            border-radius: 50%;\n            margin: 0 auto 1.5rem;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            font-size: 2rem;\n            color: white;\n        }\n        \n        h1 {\n            color: #2d3748;\n            margin-bottom: 1rem;\n            font-size: 2.5rem;\n        }\n        \n        .subtitle {\n            color: #718096;\n            margin-bottom: 2rem;\n            font-size: 1.1rem;\n        }\n        \n        .features {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n            gap: 1.5rem;\n            margin: 2rem 0;\n        }\n        \n        .feature {\n            padding: 1.5rem;\n            background: #f7fafc;\n            border-radius: 8px;\n            border-left: 4px solid #667eea;\n        }\n        \n        .feature h3 {\n            color: #2d3748;\n            margin-bottom: 0.5rem;\n        }\n        \n        .feature p {\n            color: #718096;\n            font-size: 0.9rem;\n        }\n        \n        .cta-button {\n            display: inline-block;\n            background: #667eea;\n            color: white;\n            padding: 12px 24px;\n            text-decoration: none;\n            border-radius: 6px;\n            font-weight: 500;\n            transition: background 0.3s ease;\n            margin-top: 1rem;\n        }\n        \n        .cta-button:hover {\n            background: #5a67d8;\n        }\n        \n        .tech-stack {\n            margin-top: 2rem;\n            padding-top: 2rem;\n            border-top: 1px solid #e2e8f0;\n        }\n        \n        .tech-stack h3 {\n            color: #2d3748;\n            margin-bottom: 1rem;\n        }\n        \n        .tech-tags {\n            display: flex;\n            flex-wrap: wrap;\n            gap: 0.5rem;\n            justify-content: center;\n        }\n        \n        .tech-tag {\n            background: #edf2f7;\n            color: #4a5568;\n            padding: 0.25rem 0.75rem;\n            border-radius: 20px;\n            font-size: 0.8rem;\n            font-weight: 500;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"logo\">📁</div>\n        <h1>文件浏览器</h1>\n        <p class=\"subtitle\">现代化在线文件管理工具</p>\n        \n        <div class=\"features\">\n            <div class=\"feature\">\n                <h3>🗂️ 分栏视图</h3>\n                <p>类似 macOS Finder 的多栏导航体验，支持横向滚动和多层级展开</p>\n            </div>\n            \n            <div class=\"feature\">\n                <h3>👀 文件预览</h3>\n                <p>支持20+种文件格式的在线预览，包括图片、视频、代码、文档等</p>\n            </div>\n            \n            <div class=\"feature\">\n                <h3>🎨 现代设计</h3>\n                <p>响应式设计，适配不同屏幕尺寸，提供专业的用户体验</p>\n            </div>\n            \n            <div class=\"feature\">\n                <h3>⚡ 高性能</h3>\n                <p>智能处理大文件，避免浏览器卡顿，提供流畅的浏览体验</p>\n            </div>\n        </div>\n        \n        <a href=\"#\" class=\"cta-button\">开始使用</a>\n        \n        <div class=\"tech-stack\">\n            <h3>技术栈</h3>\n            <div class=\"tech-tags\">\n                <span class=\"tech-tag\">Next.js 15</span>\n                <span class=\"tech-tag\">React 19</span>\n                <span class=\"tech-tag\">TypeScript</span>\n                <span class=\"tech-tag\">Tailwind CSS</span>\n                <span class=\"tech-tag\">Heroicons</span>\n            </div>\n        </div>\n    </div>\n    \n    <script>\n        // 简单的交互效果\n        document.addEventListener('DOMContentLoaded', function() {\n            const features = document.querySelectorAll('.feature');\n            \n            features.forEach((feature, index) => {\n                feature.style.opacity = '0';\n                feature.style.transform = 'translateY(20px)';\n                \n                setTimeout(() => {\n                    feature.style.transition = 'all 0.6s ease';\n                    feature.style.opacity = '1';\n                    feature.style.transform = 'translateY(0)';\n                }, index * 200);\n            });\n            \n            // 点击按钮效果\n            const ctaButton = document.querySelector('.cta-button');\n            ctaButton.addEventListener('click', function(e) {\n                e.preventDefault();\n                alert('欢迎使用文件浏览器！请在实际项目中替换此链接。');\n            });\n        });\n    </script>\n</body>\n</html>"
+      },
+      {
+        "id": "web-files/styles.css",
+        "name": "styles.css",
+        "type": "file",
+        "path": "/web-files/styles.css",
+        "size": 5194,
+        "modified": "2025-08-12T08:47:30.574Z",
+        "mimeType": "text/css",
+        "content": "/* 文件浏览器样式文件 */\n/* 演示 CSS 代码的语法高亮功能 */\n\n:root {\n  --primary-color: #667eea;\n  --secondary-color: #764ba2;\n  --text-color: #2d3748;\n  --text-muted: #718096;\n  --background: #ffffff;\n  --surface: #f7fafc;\n  --border: #e2e8f0;\n  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n  --radius: 8px;\n  --transition: all 0.3s ease;\n}\n\n/* 基础重置 */\n* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', \n               'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', \n               sans-serif;\n  line-height: 1.6;\n  color: var(--text-color);\n  background-color: var(--background);\n}\n\n/* 文件浏览器容器 */\n.file-browser {\n  display: flex;\n  height: 100vh;\n  overflow: hidden;\n}\n\n/* 分栏视图 */\n.column-view {\n  display: flex;\n  flex: 1;\n  overflow-x: auto;\n  overflow-y: hidden;\n  scroll-behavior: smooth;\n}\n\n.column {\n  min-width: 300px;\n  width: 300px;\n  border-right: 1px solid var(--border);\n  background: var(--background);\n  display: flex;\n  flex-direction: column;\n}\n\n.column:last-child {\n  border-right: none;\n}\n\n/* 列标题 */\n.column-header {\n  padding: 1rem;\n  border-bottom: 1px solid var(--border);\n  background: var(--surface);\n  font-weight: 600;\n  font-size: 0.9rem;\n  color: var(--text-muted);\n}\n\n/* 文件列表 */\n.file-list {\n  flex: 1;\n  overflow-y: auto;\n  padding: 0.5rem 0;\n}\n\n.file-item {\n  display: flex;\n  align-items: center;\n  padding: 0.75rem 1rem;\n  cursor: pointer;\n  transition: var(--transition);\n  border-left: 3px solid transparent;\n}\n\n.file-item:hover {\n  background-color: var(--surface);\n}\n\n.file-item.selected {\n  background-color: rgba(102, 126, 234, 0.1);\n  border-left-color: var(--primary-color);\n}\n\n.file-item.selected .file-name {\n  color: var(--primary-color);\n  font-weight: 500;\n}\n\n/* 文件图标 */\n.file-icon {\n  width: 20px;\n  height: 20px;\n  margin-right: 0.75rem;\n  flex-shrink: 0;\n}\n\n.file-icon.folder {\n  color: #fbbf24;\n}\n\n.file-icon.image {\n  color: #10b981;\n}\n\n.file-icon.video {\n  color: #8b5cf6;\n}\n\n.file-icon.audio {\n  color: #f59e0b;\n}\n\n.file-icon.document {\n  color: #ef4444;\n}\n\n.file-icon.code {\n  color: #3b82f6;\n}\n\n/* 文件信息 */\n.file-info {\n  flex: 1;\n  min-width: 0;\n}\n\n.file-name {\n  font-size: 0.9rem;\n  font-weight: 400;\n  color: var(--text-color);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n.file-meta {\n  font-size: 0.75rem;\n  color: var(--text-muted);\n  margin-top: 0.125rem;\n}\n\n/* 预览面板 */\n.preview-panel {\n  width: 400px;\n  min-width: 400px;\n  border-left: 1px solid var(--border);\n  background: var(--background);\n  display: flex;\n  flex-direction: column;\n}\n\n.preview-panel.expanded {\n  width: 60%;\n  min-width: 600px;\n}\n\n.preview-header {\n  padding: 1rem;\n  border-bottom: 1px solid var(--border);\n  background: var(--surface);\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.preview-title {\n  font-weight: 600;\n  font-size: 0.9rem;\n  color: var(--text-color);\n}\n\n.preview-actions {\n  display: flex;\n  gap: 0.5rem;\n}\n\n.preview-button {\n  padding: 0.25rem;\n  border: none;\n  background: none;\n  cursor: pointer;\n  border-radius: 4px;\n  transition: var(--transition);\n}\n\n.preview-button:hover {\n  background-color: var(--border);\n}\n\n.preview-content {\n  flex: 1;\n  overflow: auto;\n  padding: 1rem;\n}\n\n/* 代码预览 */\n.code-preview {\n  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;\n  font-size: 0.875rem;\n  line-height: 1.5;\n  background: #1e1e1e;\n  color: #d4d4d4;\n  padding: 1rem;\n  border-radius: var(--radius);\n  overflow-x: auto;\n}\n\n/* 图片预览 */\n.image-preview {\n  text-align: center;\n}\n\n.image-preview img {\n  max-width: 100%;\n  max-height: 70vh;\n  border-radius: var(--radius);\n  box-shadow: var(--shadow);\n}\n\n/* 视频预览 */\n.video-preview video {\n  width: 100%;\n  max-height: 70vh;\n  border-radius: var(--radius);\n}\n\n/* 表格预览 */\n.table-preview {\n  overflow-x: auto;\n}\n\n.table-preview table {\n  width: 100%;\n  border-collapse: collapse;\n  font-size: 0.875rem;\n}\n\n.table-preview th,\n.table-preview td {\n  padding: 0.5rem;\n  text-align: left;\n  border-bottom: 1px solid var(--border);\n}\n\n.table-preview th {\n  background: var(--surface);\n  font-weight: 600;\n  color: var(--text-muted);\n}\n\n/* 响应式设计 */\n@media (max-width: 768px) {\n  .column {\n    min-width: 250px;\n    width: 250px;\n  }\n  \n  .preview-panel {\n    width: 100%;\n    min-width: 100%;\n  }\n  \n  .file-browser {\n    flex-direction: column;\n  }\n}\n\n/* 滚动条样式 */\n::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n\n::-webkit-scrollbar-track {\n  background: var(--surface);\n}\n\n::-webkit-scrollbar-thumb {\n  background: var(--border);\n  border-radius: 4px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: var(--text-muted);\n}\n\n/* 加载动画 */\n.loading {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 2rem;\n}\n\n.spinner {\n  width: 24px;\n  height: 24px;\n  border: 2px solid var(--border);\n  border-top: 2px solid var(--primary-color);\n  border-radius: 50%;\n  animation: spin 1s linear infinite;\n}\n\n@keyframes spin {\n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(360deg); }\n}"
+      }
+    ]
+  },
+  {
+    "id": "README.md",
+    "name": "README.md",
+    "type": "file",
+    "path": "/README.md",
+    "size": 675,
+    "modified": "2025-08-12T08:45:01.835Z",
+    "mimeType": "text/markdown",
+    "content": "# 示例文件集合\n\n这个文件夹包含了各种格式的示例文件，用于演示文件浏览器的预览功能。\n\n## 文件分类\n\n### 📄 文档文件\n- `documents/` - 各种文档格式示例\n- `presentations/` - 演示文稿文件\n\n### 💻 代码文件\n- `code-samples/` - 各种编程语言示例\n- `web-files/` - 前端相关文件\n\n### 🎨 媒体文件\n- `images/` - 图片文件示例\n- `videos/` - 视频文件示例\n- `audio/` - 音频文件示例\n\n### 📊 数据文件\n- `data/` - JSON、CSV 等数据文件\n\n### 🗂️ 多级目录\n- `多级文件演示/` - 展示深层目录结构\n\n请点击各个文件夹探索不同类型的文件预览功能！"
+  }
+]

@@ -79,6 +79,29 @@ pnpm build
 pnpm start
 ```
 
+## 🚀 部署到 Vercel
+
+### 快速部署
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/your-repo)
+
+### 手动部署步骤
+1. 将代码推送到 GitHub
+2. 在 Vercel 中导入项目
+3. 配置环境变量：
+   ```
+   FILE_BROWSER_MODE=files
+   FILES_MODE_ENABLED=true
+   FILES_FOLDER_PATH=public/files
+   ```
+4. 部署完成
+
+### 部署注意事项
+- 文件需要放在 `public/files/` 目录下
+- 构建时会自动生成文件列表
+- 支持自动环境检测（开发/生产）
+
+详细部署指南请参考 [DEPLOYMENT.md](DEPLOYMENT.md)
+
 
 ## 🛠️ 技术栈
 

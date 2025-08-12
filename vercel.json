@@ -1,0 +1,26 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "env": {
+    "FILE_BROWSER_MODE": "files",
+    "FILES_MODE_ENABLED": "true",
+    "FILES_FOLDER_PATH": "public/files"
+  },
+  "functions": {
+    "src/app/api/file/route.ts": {
+      "maxDuration": 30
+    }
+  },
+  "headers": [
+    {
+      "source": "/files/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ]
+}

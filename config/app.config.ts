@@ -6,6 +6,8 @@
 export interface AppConfig {
   /** 文件浏览模式 */
   mode: 'local' | 'files';
+  /** 是否为静态部署模式 (Vercel等) */
+  isStaticDeploy: boolean;
   /** 本地文件系统根路径 (mode: 'local' 时使用) */
   rootPath: string;
   /** 项目文件夹配置 (mode: 'files' 时使用) */
@@ -29,7 +31,10 @@ export interface AppConfig {
 
 const config: AppConfig = {
   // 文件浏览模式: 'local' = 浏览本地文件系统, 'files' = 浏览项目files文件夹
-  mode: process.env.FILE_BROWSER_MODE as 'local' | 'files' || 'local',
+  mode: process.env.FILE_BROWSER_MODE as 'local' | 'files' || 'files',
+  
+  // 检测是否为静态部署环境 (Vercel等)
+  isStaticDeploy: process.env.VERCEL === '1' || process.env.NODE_ENV === 'production',
   
   // 本地文件系统根路径
   rootPath: process.env.ROOT_PATH || '/Users',

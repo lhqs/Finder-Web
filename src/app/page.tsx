@@ -1,5 +1,7 @@
 import ColumnView from '@/components/ColumnView';
 import { readDirectory } from '@/utils/fileSystem';
+import { readDirectory as readStaticDirectory } from '@/utils/staticFileSystem';
+import config from '../../config/app.config';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -15,7 +17,10 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const fileData = await readDirectory();
+  // 根据部署环境选择不同的文件系统
+  const fileData = config.isStaticDeploy 
+    ? await readStaticDirectory()
+    : await readDirectory();
 
   return (
     <div className="h-[95vh] bg-gray-100 flex flex-col">
