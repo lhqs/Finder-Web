@@ -37,7 +37,7 @@ const config: AppConfig = {
   // 项目文件夹配置
   filesFolder: {
     enabled: process.env.FILES_MODE_ENABLED === 'true',
-    folderPath: process.env.FILES_FOLDER_PATH || 'files',
+    folderPath: process.env.FILES_FOLDER_PATH || 'public/files',
   },
   
   // 预览配置
