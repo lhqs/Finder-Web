@@ -32,6 +32,7 @@ export default function Docs() {
               <li><a href="#installation" className="text-blue-600 hover:text-blue-800">安装配置</a></li>
               <li><a href="#configuration" className="text-blue-600 hover:text-blue-800">配置说明</a></li>
               <li><a href="#deployment" className="text-blue-600 hover:text-blue-800">部署指南</a></li>
+              <li><a href="#vercel-deploy" className="text-blue-600 hover:text-blue-800">Vercel 部署</a></li>
               <li><a href="#troubleshooting" className="text-blue-600 hover:text-blue-800">故障排除</a></li>
             </ul>
           </nav>
@@ -113,10 +114,22 @@ ROOT_PATH=/Users/your-username/Documents`}</code>
               <h4 className="font-semibold text-gray-900 mb-2">项目文件夹模式 (files)</h4>
               <p className="text-gray-600 mb-2">浏览项目中的 files 文件夹，适合存放项目相关文档：</p>
               <pre className="bg-gray-100 p-3 rounded text-sm text-black mb-4">
-                <code>{`FILE_BROWSER_MODE=files
+                <code>{`# 开发环境
+FILE_BROWSER_MODE=files
 FILES_MODE_ENABLED=true
-FILES_FOLDER_PATH=files`}</code>
+FILES_FOLDER_PATH=files
+
+# 生产环境（Vercel 等）
+FILE_BROWSER_MODE=files
+FILES_MODE_ENABLED=true
+FILES_FOLDER_PATH=public/files`}</code>
               </pre>
+              <div className="bg-blue-50 p-3 rounded text-sm">
+                <p className="text-blue-800">
+                  <strong>提示：</strong> 项目会自动检测部署环境。开发时使用 <code>files/</code>，
+                  部署到 Vercel 时自动使用 <code>public/files/</code>。
+                </p>
+              </div>
             </div>
 
             <h3 className="text-lg font-semibold text-gray-900 mb-3">性能配置</h3>
@@ -124,6 +137,17 @@ FILES_FOLDER_PATH=files`}</code>
               <li><strong>文本文件大小限制</strong>: 1MB（可在 config/app.config.ts 中修改）</li>
               <li><strong>CSV 显示行数</strong>: 普通模式 10 行，展开模式 50 行</li>
               <li><strong>代码高亮最大高度</strong>: 普通模式 384px，展开模式无限制</li>
+            </ul>
+
+            <h3 className="text-lg font-semibold text-gray-900 mb-3">环境检测配置</h3>
+            <p className="text-gray-600 mb-4">
+              项目支持自动环境检测，根据部署环境选择合适的文件系统模式：
+            </p>
+            <ul className="mb-6">
+              <li><strong>开发环境</strong>: 使用 Node.js fs 模块直接读取文件系统</li>
+              <li><strong>Vercel 部署</strong>: 自动检测 VERCEL=1 环境变量，使用静态文件列表</li>
+              <li><strong>生产环境</strong>: NODE_ENV=production 时使用静态文件列表</li>
+              <li><strong>构建时生成</strong>: prebuild 脚本自动扫描文件并生成 JSON 列表</li>
             </ul>
 
             <h3 className="text-lg font-semibold text-gray-900 mb-3">安全配置</h3>
@@ -168,8 +192,47 @@ docker run -p 3000:3000 \\
               </p>
             </div>
 
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">Vercel 部署</h3>
-            <p>项目已配置好 Vercel 部署，只需连接 GitHub 仓库即可自动部署。</p>
+            <h3 id="vercel-deploy" className="text-lg font-semibold text-gray-900 mb-3">Vercel 部署</h3>
+            <p className="mb-4">项目已配置好 Vercel 部署支持，包含自动环境检测和静态文件生成。</p>
+            
+            <h4 className="font-semibold text-gray-900 mb-2">快速部署</h4>
+            <p className="mb-3">点击下方按钮一键部署到 Vercel：</p>
+            <div className="mb-4">
+              <a href="https://vercel.com/new/clone?repository-url=https://github.com/your-username/finder-web" 
+                 className="inline-block bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors">
+                Deploy with Vercel
+              </a>
+            </div>
+
+            <h4 className="font-semibold text-gray-900 mb-2">手动部署步骤</h4>
+            <ol className="mb-4 space-y-2">
+              <li>1. 将代码推送到 GitHub 仓库</li>
+              <li>2. 在 Vercel 中导入项目</li>
+              <li>3. 配置环境变量（见下方）</li>
+              <li>4. 点击部署</li>
+            </ol>
+
+            <h4 className="font-semibold text-gray-900 mb-2">Vercel 环境变量配置</h4>
+            <pre className="bg-gray-100 p-3 rounded text-sm text-black mb-4">
+              <code>{`FILE_BROWSER_MODE=files
+FILES_MODE_ENABLED=true
+FILES_FOLDER_PATH=public/files`}</code>
+            </pre>
+
+            <div className="bg-yellow-50 p-4 rounded-lg mb-4">
+              <p className="text-yellow-800 text-sm">
+                <strong>重要：</strong> Vercel 部署时，文件需要放在 <code>public/files/</code> 目录下。
+                构建时会自动生成文件列表，无需手动配置文件系统访问。
+              </p>
+            </div>
+
+            <h4 className="font-semibold text-gray-900 mb-2">部署特性</h4>
+            <ul className="mb-4">
+              <li>• <strong>自动环境检测</strong>：根据部署环境自动选择文件系统模式</li>
+              <li>• <strong>静态文件生成</strong>：构建时自动扫描并生成文件列表</li>
+              <li>• <strong>无服务器兼容</strong>：完全兼容 Vercel 的 serverless 环境</li>
+              <li>• <strong>CDN 加速</strong>：静态文件通过 Vercel CDN 加速访问</li>
+            </ul>
           </section>
 
          
@@ -179,6 +242,16 @@ docker run -p 3000:3000 \\
             
             <h3 className="text-lg font-semibold text-gray-900 mb-3">常见问题</h3>
             
+            <div className="mb-6">
+              <h4 className="font-semibold text-gray-900 mb-2">Vercel 部署后显示空白</h4>
+              <ul className="text-gray-600 mb-4">
+                <li>1. 确认文件放在 <code>public/files/</code> 目录下</li>
+                <li>2. 检查 Vercel 构建日志是否有错误</li>
+                <li>3. 确认环境变量配置正确</li>
+                <li>4. 验证 <code>src/data/fileList.json</code> 已生成</li>
+              </ul>
+            </div>
+
             <div className="mb-6">
               <h4 className="font-semibold text-gray-900 mb-2">文件无法预览</h4>
               <ul className="text-gray-600 mb-4">
@@ -198,12 +271,23 @@ docker run -p 3000:3000 \\
               </ul>
             </div>
 
+            <div className="mb-6">
+              <h4 className="font-semibold text-gray-900 mb-2">环境检测问题</h4>
+              <ul className="text-gray-600 mb-4">
+                <li>1. 项目会自动检测是否为 Vercel 部署环境</li>
+                <li>2. 开发环境使用 fs 模块直接读取文件</li>
+                <li>3. 生产环境使用预生成的静态文件列表</li>
+                <li>4. 如需强制使用静态模式，设置 <code>NODE_ENV=production</code></li>
+              </ul>
+            </div>
+
             <div>
               <h4 className="font-semibold text-gray-900 mb-2">性能问题</h4>
               <ul className="text-gray-600">
                 <li>1. 避免浏览包含大量文件的目录</li>
                 <li>2. 关闭不必要的预览窗口</li>
                 <li>3. 定期清理浏览器缓存</li>
+                <li>4. 大文件建议放在外部存储服务</li>
               </ul>
             </div>
           </section>

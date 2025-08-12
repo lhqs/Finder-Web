@@ -61,7 +61,7 @@ export default async function Home() {
             "@type": "SoftwareApplication",
             "name": "专业文件浏览器",
             "description": "现代化的在线文件浏览器，支持多种文件格式预览和管理",
-            "url": "https://your-domain.com",
+            "url": "https://finder.lhqs.ink",
             "applicationCategory": "UtilitiesApplication",
             "operatingSystem": "Web Browser",
             "offers": {

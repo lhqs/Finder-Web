@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://your-domain.com' // 替换为你的实际域名
+  const baseUrl = 'https://finder.lhqs.ink' // 替换为你的实际域名
   
   return [
     {

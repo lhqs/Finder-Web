@@ -21,4 +21,4 @@ Disallow: /node_modules/
 Disallow: /.git/
 
 # 站点地图位置
-Sitemap: https://your-domain.com/sitemap.xml
+Sitemap: https://finder.lhqs.ink/sitemap.xml

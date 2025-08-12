@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'zh_CN',
-    url: 'https://your-domain.com',
+    url: 'https://finder.lhqs.ink',
     title: '专业文件浏览器 - 现代化在线文件管理工具',
     description: '支持多种文件格式预览的专业文件浏览器，类似macOS Finder的分栏视图设计，代码高亮、图片视频播放、PDF预览等功能一应俱全。',
     siteName: '专业文件浏览器',
@@ -47,10 +47,10 @@ export const metadata: Metadata = {
     creator: '@your-twitter-handle',
   },
   alternates: {
-    canonical: 'https://your-domain.com',
+    canonical: 'https://finder.lhqs.ink',
     languages: {
-      'zh-CN': 'https://your-domain.com',
-      'en-US': 'https://your-domain.com/en',
+      'zh-CN': 'https://finder.lhqs.ink',
+      'en-US': 'https://finder.lhqs.ink/en',
     },
   },
   category: '工具软件',
