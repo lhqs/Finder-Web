@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 
-
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "专业文件浏览器 - 类似macOS Finder的在线文件管理工具",
@@ -91,6 +91,7 @@ export default function RootLayout({
             </div>
           </footer> */}
         </div>
+        <Analytics />
       </body>
     </html>
   );
